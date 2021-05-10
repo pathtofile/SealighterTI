@@ -19,9 +19,7 @@
 extern BOOL g_bVerbose;
 extern BOOL g_bDebug;
 extern BOOL g_bForce;
-extern DWORD g_dwProcessId;
-extern LPWSTR g_pwszDumpFilePath;
-extern LPWSTR g_pwszProcessName;
+extern LPWSTR g_pwszDLLPath;
 
 BOOL ParseArguments(int argc, wchar_t* argv[]);
 VOID PrintArguments();

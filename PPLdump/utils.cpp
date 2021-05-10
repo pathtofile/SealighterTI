@@ -5,7 +5,7 @@ BOOL ParseArguments(int argc, wchar_t* argv[])
 	BOOL bReturnValue = TRUE;
 	BOOL bHelp = FALSE;
 
-	if (argc < 3)
+	if (argc < 2)
 	{
 		PrintUsage();
 		return FALSE;
@@ -13,17 +13,7 @@ BOOL ParseArguments(int argc, wchar_t* argv[])
 
 	// Read dump file path
 	--argc;
-	g_pwszDumpFilePath = argv[argc];
-
-	// Read target process name or pid
-	--argc;
-	g_pwszProcessName = argv[argc];
-
-	// Try to interpret target process argument as a number (PID rather than name)
-	g_dwProcessId = wcstoul(argv[argc], nullptr, 10);
-
-	if (g_dwProcessId != 0)
-		g_pwszProcessName = NULL;
+	g_pwszDLLPath = argv[argc];
 
 	// Parse options
 	while ((argc > 1) && (argv[1][0] == '-'))
@@ -63,7 +53,7 @@ BOOL ParseArguments(int argc, wchar_t* argv[])
 
 VOID PrintArguments()
 {
-	PrintVerbose(L"Verbose=%d | Debug=%d | Force=%d | Proc='%ws' | PID=%d | File='%ws'", g_bVerbose, g_bDebug, g_bForce, g_pwszProcessName, g_dwProcessId, g_pwszDumpFilePath);
+	PrintVerbose(L"Verbose=%d | Debug=%d | Force=%d | DLLFilePath='%ws'", g_bVerbose, g_bDebug, g_bForce, g_pwszDLLPath);
 }
 
 VOID PrintUsage()
@@ -84,15 +74,13 @@ VOID PrintUsage()
 
 	wprintf(
 		L"Usage: \n"
-		"  PPLdump.exe [-v] [-d] [-f] <PROC_NAME|PROC_ID> <DUMP_FILE>\n"
+		"  PPLdump.exe [-v] [-d] [-f] <DLL_PATH>\n"
 		"\n"
 	);
 
 	wprintf(
 		L"Arguments:\n"
-		"  PROC_NAME  The name of a Process to dump\n"
-		"  PROC_ID    The ID of a Process to dump\n"
-		"  DUMP_FILE  The path of the output dump file\n"
+		"  DLL_PATH   Full Path to DLL to load\n"
 		"\n"
 	);
 

@@ -1,29 +1,28 @@
 #include "exploit.h"
-
+#include "sealighter_provider.h"
 #include <iostream>
 
-BOOL g_bVerbose = FALSE;
-BOOL g_bDebug = FALSE;
+BOOL g_bVerbose = TRUE;
+BOOL g_bDebug = TRUE;
 BOOL g_bForce = FALSE;
-DWORD g_dwProcessId = 0;
-LPWSTR g_pwszDumpFilePath = NULL;
-LPWSTR g_pwszProcessName = NULL;
+LPWSTR g_pwszDLLPath = NULL;
 
 int wmain(int argc, wchar_t* argv[])
 {
+    BOOL bReturnValue = FALSE;
+
     if (!ParseArguments(argc, argv))
         return 1;
 
-    //PrintArguments();
-
-    if (g_pwszProcessName != NULL)
-    {
-        DumpProcessByName(g_pwszProcessName, g_pwszDumpFilePath);
-    }
-    else if (g_dwProcessId != 0)
-    {
-        DumpProcess(g_dwProcessId, g_pwszDumpFilePath);
+    // Add Sealighter ETW Provider
+    int status = EventRegisterSealighter();
+    if (ERROR_SUCCESS != status) {
+        return 1;
     }
 
-    return 0;
+    bReturnValue = LoadDLL(g_pwszDLLPath);
+    if (bReturnValue) {
+        return 0;
+    }
+    return 1;
 }
