@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PPLdump", "PPLdump\PPLdump.vcxproj", "{FCE81BDA-ACAC-4892-969E-0414E765593B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SealighterTI", "PPLdump\PPLdump.vcxproj", "{FCE81BDA-ACAC-4892-969E-0414E765593B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6E8D2C12-255B-403C-9EF3-8A097D374DB2} = {6E8D2C12-255B-403C-9EF3-8A097D374DB2}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PPLdumpDll", "PPLdumpDll\PPLdumpDll.vcxproj", "{6E8D2C12-255B-403C-9EF3-8A097D374DB2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SealighterTIDll", "PPLdumpDll\PPLdumpDll.vcxproj", "{6E8D2C12-255B-403C-9EF3-8A097D374DB2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{ED4E6027-541F-440A-A5EE-15DBB7B89423} = {ED4E6027-541F-440A-A5EE-15DBB7B89423}
 	EndProjectSection
@@ -18,35 +18,21 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		DebugSigning|x64 = DebugSigning|x64
 		Release|x64 = Release|x64
-		ReleaseSigning|x64 = ReleaseSigning|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FCE81BDA-ACAC-4892-969E-0414E765593B}.Debug|x64.ActiveCfg = Debug|x64
 		{FCE81BDA-ACAC-4892-969E-0414E765593B}.Debug|x64.Build.0 = Debug|x64
-		{FCE81BDA-ACAC-4892-969E-0414E765593B}.DebugSigning|x64.ActiveCfg = Debug|x64
-		{FCE81BDA-ACAC-4892-969E-0414E765593B}.DebugSigning|x64.Build.0 = Debug|x64
 		{FCE81BDA-ACAC-4892-969E-0414E765593B}.Release|x64.ActiveCfg = Release|x64
 		{FCE81BDA-ACAC-4892-969E-0414E765593B}.Release|x64.Build.0 = Release|x64
-		{FCE81BDA-ACAC-4892-969E-0414E765593B}.ReleaseSigning|x64.ActiveCfg = Release|x64
-		{FCE81BDA-ACAC-4892-969E-0414E765593B}.ReleaseSigning|x64.Build.0 = Release|x64
 		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.Debug|x64.ActiveCfg = Debug|x64
 		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.Debug|x64.Build.0 = Debug|x64
-		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.DebugSigning|x64.ActiveCfg = Debug|x64
-		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.DebugSigning|x64.Build.0 = Debug|x64
 		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.Release|x64.ActiveCfg = Release|x64
 		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.Release|x64.Build.0 = Release|x64
-		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.ReleaseSigning|x64.ActiveCfg = Release|x64
-		{6E8D2C12-255B-403C-9EF3-8A097D374DB2}.ReleaseSigning|x64.Build.0 = Release|x64
 		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.Debug|x64.ActiveCfg = Debug|x64
 		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.Debug|x64.Build.0 = Debug|x64
-		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.DebugSigning|x64.ActiveCfg = DebugSigning|x64
-		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.DebugSigning|x64.Build.0 = DebugSigning|x64
 		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.Release|x64.ActiveCfg = Release|x64
 		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.Release|x64.Build.0 = Release|x64
-		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.ReleaseSigning|x64.ActiveCfg = ReleaseSigning|x64
-		{ED4E6027-541F-440A-A5EE-15DBB7B89423}.ReleaseSigning|x64.Build.0 = ReleaseSigning|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
