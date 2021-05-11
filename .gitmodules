@@ -1,0 +1,6 @@
+[submodule "Sealighter"]
+	path = Sealighter
+	url = https://github.com/pathtofile/Sealighter.git
+[submodule "Detours"]
+	path = Detours
+	url = https://github.com/microsoft/Detours.git
