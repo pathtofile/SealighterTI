@@ -13,11 +13,6 @@ https://www.alex-ionescu.com/?p=97
 
 # TODO Before I push
 
-## Clean Code
-- Change Detours and Selighter to be subrepos
-https://github.com/pathtofile/Sealighter.git
-https://github.com/microsoft/Detours.git
-
 ## Write README
 - Add Build instructions
 - Make sure everyone is 100pc given credit
