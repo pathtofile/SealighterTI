@@ -62,10 +62,16 @@
     <ClInclude Include="..\Sealighter\sealighter\sealighter_util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Detours\include\detours.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="PPLdump.def">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Detours\lib.X64\detours.lib" />
   </ItemGroup>
 </Project>

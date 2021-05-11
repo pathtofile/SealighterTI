@@ -13,13 +13,13 @@
 #pragma comment(lib, "Rpcrt4.lib")
 #pragma comment(lib, "Pathcch.lib")
 
-#define AUTHOR L"@itm4n"
-#define VERSION L"0.4"
+#define AUTHOR L"@pathtofile"
+#define AUTHOR_ORIG L"@itm4n"
+#define VERSION L"1.0"
 
 extern BOOL g_bVerbose;
 extern BOOL g_bDebug;
 extern BOOL g_bForce;
-extern LPWSTR g_pwszDLLPath;
 
 BOOL ParseArguments(int argc, wchar_t* argv[]);
 VOID PrintArguments();

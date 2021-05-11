@@ -16,6 +16,7 @@
     <ProjectGuid>{fce81bda-acac-4892-969e-0414e765593b}</ProjectGuid>
     <RootNamespace>PPLdump</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SealighterTI</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

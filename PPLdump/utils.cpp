@@ -5,16 +5,6 @@ BOOL ParseArguments(int argc, wchar_t* argv[])
 	BOOL bReturnValue = TRUE;
 	BOOL bHelp = FALSE;
 
-	if (argc < 2)
-	{
-		PrintUsage();
-		return FALSE;
-	}
-
-	// Read dump file path
-	--argc;
-	g_pwszDLLPath = argv[argc];
-
 	// Parse options
 	while ((argc > 1) && (argv[1][0] == '-'))
 	{
@@ -53,34 +43,29 @@ BOOL ParseArguments(int argc, wchar_t* argv[])
 
 VOID PrintArguments()
 {
-	PrintVerbose(L"Verbose=%d | Debug=%d | Force=%d | DLLFilePath='%ws'", g_bVerbose, g_bDebug, g_bForce, g_pwszDLLPath);
+	PrintVerbose(L"Verbose=%d | Debug=%d | Force=%d", g_bVerbose, g_bDebug, g_bForce);
 }
 
 VOID PrintUsage()
 {
 	wprintf(
-		L" _____ _____ __      _               \n"
-		"|  _  |  _  |  |   _| |_ _ _____ ___ \n"
-		"|   __|   __|  |__| . | | |     | . |  version %ws\n"
-		"|__|  |__|  |_____|___|___|_|_|_|  _|  by %ws\n"
-		"                                |_|  \n"
-		"\n"
+	   L"  ___                   ___  \n"
+		" (o o)                 (o o) \n"
+		"(  V  ) Sealighter TI (  V  )     version %ws\n"
+		"--m-m-------------------m-m--     by %ws\n"
+		"                              (Original PPLDump by %ws)\n"							
 		"Description:\n"
-		"  Dump the memory of a Protected Process Light (PPL) with a *userland* exploit\n"
+		"  Inject into a PPL Process and Start an ETW Trace for the\n"
+		"  Microsoft-Windows-Threat-Intelligence Provider\n"
 		"\n",
 		VERSION,
-		AUTHOR
+		AUTHOR,
+		AUTHOR_ORIG
 	);
 
 	wprintf(
 		L"Usage: \n"
-		"  PPLdump.exe [-v] [-d] [-f] <DLL_PATH>\n"
-		"\n"
-	);
-
-	wprintf(
-		L"Arguments:\n"
-		"  DLL_PATH   Full Path to DLL to load\n"
+		"  SealighterTI.exe [-v] [-d] [-f]\n"
 		"\n"
 	);
 
@@ -94,8 +79,8 @@ VOID PrintUsage()
 
 	wprintf(
 		L"Examples:\n"
-		"  PPLdump.exe lsass.exe lsass.dmp\n"
-		"  PPLdump.exe -v 720 out.dmp\n"
+		"  SealighterTI.exe\n"
+		"  SealighterTI.exe -v -f\n"
 	);
 }
 

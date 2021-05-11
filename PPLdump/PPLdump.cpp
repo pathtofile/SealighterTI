@@ -2,14 +2,15 @@
 #include "sealighter_provider.h"
 #include <iostream>
 
-BOOL g_bVerbose = TRUE;
-BOOL g_bDebug = TRUE;
+BOOL g_bVerbose = FALSE;
+BOOL g_bDebug = FALSE;
 BOOL g_bForce = FALSE;
-LPWSTR g_pwszDLLPath = NULL;
+HANDLE g_hEventStopTrace = NULL;
 
 int wmain(int argc, wchar_t* argv[])
 {
     BOOL bReturnValue = FALSE;
+    DWORD dwPidToKill = 0;
 
     if (!ParseArguments(argc, argv))
         return 1;
@@ -20,9 +21,10 @@ int wmain(int argc, wchar_t* argv[])
         return 1;
     }
 
-    bReturnValue = LoadDLL(g_pwszDLLPath);
-    if (bReturnValue) {
-        return 0;
+    bReturnValue = StartETWLogger();
+    if (!bReturnValue) {
+        return 1;
     }
-    return 1;
+    (void)EventUnregisterSealighter();
+    return 0;
 }

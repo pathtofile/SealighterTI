@@ -34,8 +34,6 @@ HANDLE g_hConsoleOutput = NULL;
 LPWSTR g_pwszGuid = NULL;
 BOOL g_bVerbose = TRUE;
 BOOL g_bDebug = TRUE;
-LPWSTR g_pwszOption = NULL;
-DWORD g_dwPidToKill = 0;
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
@@ -60,6 +58,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
             LogToConsole(L"DllMain (process detach)\n");
         if (g_hConsoleOutput)
             FreeConsole();
+        StopTracing();
         break;
     }
     return TRUE;
@@ -68,37 +67,17 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 //
 // SspiCli.dll
 //
-void APIENTRY LogonUserExExW() {
-    LogToConsole(L"LogonUserExExW)\n");
-}
+void APIENTRY LogonUserExExW() { }
 
 //
 // EventAggregation.dll
 //
-void APIENTRY BriCreateBrokeredEvent() {
-    LogToConsole(L"BriCreateBrokeredEvent\n");
-}
-void APIENTRY BriDeleteBrokeredEvent() {
-    LogToConsole(L"BriDeleteBrokeredEvent\n");
-}
-void APIENTRY EaCreateAggregatedEvent() {
-    LogToConsole(L"EaCreateAggregatedEvent\n");
-}
-void APIENTRY EACreateAggregateEvent() {
-    LogToConsole(L"EACreateAggregateEvent\n");
-}
-void APIENTRY EaQueryAggregatedEventParameters() {
-    LogToConsole(L"EaQueryAggregatedEventParameters\n");
-}
-void APIENTRY EAQueryAggregateEventData() {
-    LogToConsole(L"EAQueryAggregateEventData\n");
-}
-void APIENTRY EaFreeAggregatedEventParameters() {
-    LogToConsole(L"EaFreeAggregatedEventParameters\n");
-}
-void APIENTRY EaDeleteAggregatedEvent() {
-    LogToConsole(L"EaDeleteAggregatedEvent\n");
-}
-void APIENTRY EADeleteAggregateEvent() {
-    LogToConsole(L"EADeleteAggregateEvent\n");
-}
+void APIENTRY BriCreateBrokeredEvent() { }
+void APIENTRY BriDeleteBrokeredEvent() { }
+void APIENTRY EaCreateAggregatedEvent() { }
+void APIENTRY EACreateAggregateEvent() { }
+void APIENTRY EaQueryAggregatedEventParameters() { }
+void APIENTRY EAQueryAggregateEventData() { }
+void APIENTRY EaFreeAggregatedEventParameters() { }
+void APIENTRY EaDeleteAggregatedEvent() { }
+void APIENTRY EADeleteAggregateEvent() { }

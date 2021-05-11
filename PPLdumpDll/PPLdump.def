@@ -10,3 +10,4 @@ EXPORTS
    EaFreeAggregatedEventParameters @8
    EaDeleteAggregatedEvent @9
    EADeleteAggregateEvent @10
+   TraceMessage @11
