@@ -1,5 +1,5 @@
 # Sealighter-TI
-Combining Sealighter with unpatched exploits and [PPLDump](https://github.com/itm4n/PPLdump) to run the `Microsoft-Windows-Threat-Intelligence` ETW Provider.
+Combining Sealighter with unpatched exploits and [PPLDump](https://github.com/itm4n/PPLdump) to run the `Microsoft-Windows-Threat-Intelligence` ETW Provider without a signed driver.
 
 # Overview
 ## The Problem - PPL and Anti-Malware
