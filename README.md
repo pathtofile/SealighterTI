@@ -1,4 +1,4 @@
-# Sealighter TI
+# Sealighter-TI
 Combining Sealighter with unpatched exploits and [PPLDump](https://github.com/itm4n/PPLdump) to run the `Microsoft-Windows-Threat-Intelligence` ETW Provider.
 
 # Overview
@@ -39,7 +39,7 @@ The just run `SealighterTI.exe`. For the first run, I reccomend running withe th
 SealighterTI.exe -d
 
 ```
-And also having a copy of [Sysinternal's DBGView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) open with the "Capture Global Win32" option set, so you can see the debug logs from the DLL/PPL Process as well. If run correctly It should look like this:
+For the first run I also reccoment having a copy of [Sysinternal's DBGView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) open with the "Capture Global Win32" option set, so you can see the debug logs from the DLL/PPL Process as well. If run correctly It should look like this:
 ![Pic of Code Running](SealighterTI_Running.png)
 
 Once it gets to "press ctrl+c to stop" Open Event Viewer, and you should see events under 'Application and Service Logs/Sealighter/Operational':
@@ -49,6 +49,9 @@ To stop the trace, pres 'ctrl+c' in the `SealighterTI.exe` window.
 
 # Technical Details
 See [this blog](https://blog.tofile.dev) for the technical details about how everything works.
+
+# Compatability
+This has only been tested on Windows 10 x64.
 
 # Aknowlegements
 All of the work to run arbitary code as PPL is the work of [Clément Labro](https://twitter.com/itm4n) and their [PPLDump](https://github.com/itm4n/PPLdump) project. I simply worked on glueing the ETW Logging to the end of it.
