@@ -21,7 +21,7 @@ PPLDump uses it's elevated access to dump the memory of `lsass.exe`. I've taken 
 
 
 # To Build
-To use pre-built binaries, download the `SealighterTI` and `sealigher_provider.man` from [The Releases Page](https://github.com/pathtofile/SealighterTI/releases).
+To use pre-built binaries, download the `SealighterTI.exe` and `sealigher_provider.man` from [The Releases Page](https://github.com/pathtofile/SealighterTI/releases).
 
 To build manually, first check out the source code (make sure to use `--recursive`):
 ```bash
@@ -45,6 +45,7 @@ And also having a copy of [Sysinternal's DBGView](https://docs.microsoft.com/en-
 Once it gets to "press ctrl+c to stop" Open Event Viewer, and you should see events under 'Application and Service Logs/Sealighter/Operational':
 ![Pic of Event Log](SealighterTI_EventLog.png)
 
+To stop the trace, pres 'ctrl+c' in the `SealighterTI.exe` window.
 
 # Technical Details
 See [this blog](https://blog.tofile.dev) for the technical details about how everything works.
@@ -66,17 +67,3 @@ The Research from [Alex Ionescu](https://twitter.com/aionescu) and [James Forsha
 - https://github.com/itm4n/PPLdump
 - https://github.com/pathtofile/PPLRunner
 - https://github.com/pathtofile/Sealighter
-
-
------------------------
-
-# TODO Before I push
-
-## Write README
-- Add Build instructions
-- Make sure everyone is 100pc given credit
-    - But also explain your additions
-
-## Write Blog
-- Make sure everyone is 100pc given credit
-    - But also explain your additions
