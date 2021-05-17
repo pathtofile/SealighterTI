@@ -37,7 +37,6 @@ wevtutil im path/to/sealigher_provider.man
 Then just run `SealighterTI.exe`. For the first run, I recommend running with the debug flag:
 ```bash
 SealighterTI.exe -d
- 
 ```
 For the first run I also recommend having a copy of [Sysinternal's DBGView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) open with the "Capture Global Win32" option set, so you can see the debug logs from the DLL/PPL Process as well. If run correctly It should look like this:
 ![Pic of Code Running](SealighterTI_Running.png)
