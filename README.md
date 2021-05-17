@@ -27,7 +27,10 @@ To build manually, first check out the source code (make sure to use `--recursiv
 ```bash
 git clone --recursive https://github.com/pathtofile/SealighterTI.git
 ```
- 
+Then build `SealighterTI.sln` 
+
+**In most circumstances, only the 'Release' Build will actually inject successfully, so build and use that for 99% of cases**
+
 # To Run
 First Open up the `sealigher_provider.man` in a text editor, and replace all uses of `!!SEALIGHTER_LOCATION!!` with the full path to the `SealighterTI.exe` binary. Then from an elevated command prompt run:
 ```bash
