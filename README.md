@@ -32,7 +32,8 @@ Then build `SealighterTI.sln`
 **In most circumstances, only the 'Release' Build will actually inject successfully, so build and use that for 99% of cases**
 
 # To Run
-First Open up the `sealigher_provider.man` in a text editor, and replace all uses of `!!SEALIGHTER_LOCATION!!` with the full path to the `SealighterTI.exe` binary. Then from an elevated command prompt run:
+First, move the `SealighterTI.exe` binary to somewhere accessible by all users, e.g. `C:\Program Files`.
+Then open up the `sealigher_provider.man` in a text editor, and replace all uses of `!!SEALIGHTER_LOCATION!!` with the full path to the `SealighterTI.exe` binary. Then from an elevated command prompt run:
 ```bash
 wevtutil im path/to/sealigher_provider.man
 ```
