@@ -14,7 +14,9 @@ I originally created a research project named [PPLRunner](https://github.com/pat
 Back in 2018 [Alex Ionescu](https://twitter.com/aionescu) and [James Forshaw](https://twitter.com/tiraniddo) presented a [series of talks](http://publications.alex-ionescu.com/Recon/Recon%202018%20-%20Unknown%20Known%20DLLs%20and%20other%20code%20integrity%20trust%20violations.pdf), as well as some [blogs](https://googleprojectzero.blogspot.com/2018/08/windows-exploitation-tricks-exploiting.html), covering many ways you could trick Windows into illegitimately running arbitrary code at the PPL level. A number of these techniques remain unpatched to this day.
  
 In 2021 [Clément Labro](https://twitter.com/itm4n) created the project [PPLDump](https://github.com/itm4n/PPLdump), which uses one of the unpatched techniques Alex and James covered, to trick a PPL-elevated `services.exe` into loading an arbitrary DLL.
- 
+
+### Note : The PPLDump exploit is patched on Windows 10 v21H2 Build 19044.1826 and upwards.
+A relatively pretty sad news, You can know more about it [here](https://github.com/itm4n/PPLdump/issues/12) and [here](https://itm4n.github.io/the-end-of-ppldump/).
  
 ## The Glue - SealighterTI
 PPLDump uses its elevated access to dump the memory of `lsass.exe`. I've taken Clément's awesome code, and instead combined it with my ETW Logging tool [Sealighter](https://github.com/pathtofile/Sealighter), to enable you to get events from the `Microsoft-Windows-Threat-Intelligence` logging to the Windows Event Log. This is possible from a 'production' machine, without the need for a signed driver or to put the machine into 'test signing' mode.
