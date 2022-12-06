@@ -5,6 +5,8 @@ Combining Sealighter with unpatched exploits and [PPLDump](https://github.com/it
 The PPLDump exploit is patched on Windows 10 v21H2 Build 19044.1826 and upwards.
 You can know more about it [here](https://github.com/itm4n/PPLdump/issues/12) and [here](https://itm4n.github.io/the-end-of-ppldump/).
 
+For a similar solution, see [my blog on using Vulnerable Drivers](https://blog.tofile.dev/2022/11/30/kdu_sealighter.html) for the same purpose.
+
 # Overview
 ## The Problem - PPL and Anti-Malware
 The `Microsoft-Windows-Threat-Intelligence` ETW Provider is an excellent tool to [detect process injection](https://blog.redbluepurple.io/windows-security-research/kernel-tracing-injection-detection), and other type of attacks. Unlike usermode hooking or in-process ETW Providers, avoiding or tampering with the `Threat-Intelligence` is very difficult.
